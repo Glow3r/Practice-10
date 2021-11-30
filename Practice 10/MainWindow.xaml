@@ -1,0 +1,56 @@
+﻿<Window x:Class="Practice_10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice_10"
+        mc:Ignorable="d"
+        Title="Practice 10, variant 12" Height="350" Width="300" MinHeight="300" MinWidth="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Menu VerticalAlignment="Top">
+                <MenuItem Header="Файл" Height="20">
+                    <MenuItem Header="Выход" Click="Exit_Click"/>
+                </MenuItem>
+                <MenuItem Header="Справка" Height="20">
+                    <MenuItem Header="О программе" Click="Information_Click"/>
+                </MenuItem>
+            </Menu>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ListBox x:Name="outputListBox" Height="100" Width="300" />
+        </Grid>
+        
+        <Grid Grid.Row="2">
+            <Label Content="Диапозон" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal" Height="35">
+                <Border BorderThickness="30"/>
+                <Label Content="От" VerticalAlignment="Center"/>
+                <TextBox x:Name="minImputValue"  Width="50" />
+                <Label Content="До" VerticalAlignment="Center"/>
+                <TextBox x:Name="maxImputValue" Width="50"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <StackPanel>
+                <Border BorderThickness="3"/>
+                <Button Content="Заполнить" Height="25" Width="200" Click="FillList_Click"/>
+                <Border BorderThickness="3"/>
+                <Button Content="Определить" Height="25" Width="200" Click="FindOut_Click"/>
+                <Border BorderThickness="3"/>
+                <Button Content="Очистить" Height="25" Width="200" Click="Clear_Click"/>
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Window>
